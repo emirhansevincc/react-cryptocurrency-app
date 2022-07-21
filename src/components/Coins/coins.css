@@ -1,0 +1,16 @@
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: whitesmoke;
+    margin: 50px 150px 30px 150px;
+    border-radius: 15px;
+}
+.left{margin-right: 20px;}
+@media (max-width: 600px){
+    .head{
+        margin: 30px 25px 25px 25px;
+    }
+}
