@@ -6,3 +6,8 @@
 body{
   background-color: #222;
 }
+.app-info{
+  color: green;
+  text-align: center;
+  margin-top: 20px;
+}

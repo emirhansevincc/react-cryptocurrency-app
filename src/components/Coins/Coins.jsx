@@ -5,7 +5,6 @@ import './coins.css'
 function Coins({ coins }) {
     return (
         <div>
-
             <div className="container">
                 <div className="head">
                     <p>#</p>
@@ -17,7 +16,6 @@ function Coins({ coins }) {
             </div>
 
             <CoinList coins={coins} />
-            
         </div>
     )
 }

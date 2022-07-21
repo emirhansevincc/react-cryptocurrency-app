@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Coins from "./components/Coins/Coins";
 import Navbar from "./components/Navbar/Navbar";
-// import CoinList from "./components/CoinList/CoinList";
+import { Route, Routes } from "react-router-dom";
+import Detail from "./pages/Detail";
 
 function App() {
 
@@ -12,16 +13,27 @@ function App() {
   useEffect(() => {
     axios.get(url).then((response) => {
       setCoins(response.data)
-      console.log(response.data);
+      // console.log(response.data);
 
     }).catch((err) => console.log(err))
 
   }, [])
 
   return (
+
+    // If you click on the element, you will be directed to the information page.
+
     <div className="App">
+      
       <Navbar />
-      <Coins coins={coins} />
+
+      <Routes>
+        <Route path="/" element={<Coins coins={coins} />} />
+        <Route path="/coin" element={<Detail />}>
+          <Route path=":Id" element={<Detail />} />
+        </Route>
+      </Routes>
+
     </div>
   );
 }
